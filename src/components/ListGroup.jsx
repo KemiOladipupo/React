@@ -2,20 +2,13 @@ function ListGroup() {
 
     let items = ["USA", "Nigeria", "Germany", "UK", "Finland"];
 
-    items = [];
-
-    const noItem = () => {
-      if (items.length === 0) {
-        return <p> No Item Found</p>;
-      }
-    }
   return (
     <>
     <h1> List </h1>
-      { noItem()}
+    {items.length === 0 && <p> No Item Found</p>}
       <ul className="list-group">
       {items.map((item, index) => (
-        <li key={index} className="list-group-item">{item}</li>
+        <li key={item} className="list-group-item">{item}</li>
       ))}
       </ul>
     </>
